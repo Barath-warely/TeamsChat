@@ -42,7 +42,10 @@ class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelected
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_chats -> supportFragmentManager.beginTransaction().replace(R.id.fragment_container, ChatFragment()).commit()
-            R.id.menu_reports -> { /* TODO: start reports activity or fragment */ }
+            R.id.menu_reports -> {
+                startActivity(Intent(this, com.example.teamschat.ui.reports.ReportsActivity::class.java))
+                true
+            }
             R.id.menu_settings -> { /* TODO: start settings */ }
             R.id.menu_logout -> {
                 TokenManager.clear()

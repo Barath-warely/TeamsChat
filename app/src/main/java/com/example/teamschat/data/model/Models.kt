@@ -23,6 +23,12 @@ data class Chat(
     val updated_at: String?,
     val user: User?
 )
+data class ReportResponse(
+    val user_id: Int,
+    val from: String?,
+    val to: String?,
+    val chats: List<Chat>
+)
 
 
 data class PageChats(
